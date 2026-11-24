@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f2f4ee">
+<title>Circuito das Praças — Entre Feiras e Saberes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2f4ee;--ink:#1d2620;--muted:#58625a;--pri:#27533d;--gold:#e3a72f;--f:'Archivo','Helvetica Neue',Arial,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 var(--f)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--pri);outline-offset:2px}
+.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+h1,h2,h3,h4{word-spacing:.08em;font-family:var(--f);font-stretch:72%;font-weight:800;line-height:.98;margin:0;text-wrap:balance}
+p{margin:0 0 1em;max-width:62ch}
+
+header{padding:18px 0}
+.nav{display:flex;justify-content:space-between;align-items:baseline;gap:12px 28px;flex-wrap:wrap}
+.brand{font-stretch:72%;font-weight:800;font-size:22px}
+.nav nav{display:flex;gap:22px;flex-wrap:wrap}
+.nav nav a{text-decoration:none;font-size:15px}
+.nav nav a:hover{text-decoration:underline;text-underline-offset:4px}
+
+.hero{padding:64px 0 56px}
+h1{font-size:clamp(58px,11vw,146px);letter-spacing:-.01em;max-width:9.5em}
+.hero-text{margin-top:40px;max-width:640px}
+.lead{font-size:21px;line-height:1.5;margin:0}
+.awning{height:22px;background:repeating-linear-gradient(90deg,#8a6a3b 0 56px,#3f7a4f 56px 112px,#b5482f 112px 168px,#3d6a8f 168px 224px,#c48a12 224px 280px)}
+
+.quote{background:var(--gold);padding:34px 0}
+.quote cite{display:block;font-style:normal;font-size:15px;font-weight:500;margin-top:14px}
+.quote p{font-size:clamp(22px,3vw,30px);line-height:1.3;font-weight:600;max-width:34em;margin:0}
+
+section{padding:80px 0}
+.head{max-width:640px;margin-bottom:44px}
+.head h2{font-size:clamp(44px,6vw,76px)}
+.head p{margin:16px 0 0;color:var(--muted)}
+
+.day{display:grid;grid-template-columns:150px 1fr;gap:28px;margin-bottom:48px}
+.day>h3{font-size:46px;position:sticky;top:16px;align-self:start}
+.place{--c:var(--pri);background:#fff;border-left:10px solid var(--c);padding:26px 28px;margin-bottom:14px;display:grid;grid-template-columns:1.05fr 1fr;gap:12px 40px}
+.c1{--c:#8a6a3b}.c2{--c:#3f7a4f}.c3{--c:#b5482f}.c4{--c:#3d6a8f}.c5{--c:#c48a12}
+.place h4{font-size:34px;margin-bottom:12px}
+.place .desc{color:var(--muted);font-size:16px;margin:0}
+.info p{font-size:15px;margin:0 0 12px}
+.info b{display:block;font-size:14px;color:var(--muted);font-weight:600}
+.info small{color:var(--muted);font-size:13px}
+.tag{display:inline-block;background:#e6ebe3;padding:2px 9px;margin:4px 4px 0 0;font-size:14px;font-weight:600}
+.note{font-size:13px;color:var(--muted);margin:8px 0 0}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.btn{display:inline-block;padding:9px 15px;border:2px solid var(--pri);color:var(--pri);text-decoration:none;font-size:14px;font-weight:600}
+.btn:hover{background:var(--pri);color:#fff}
+.notice{background:#e4eadf;padding:22px 26px;margin-top:20px;font-size:15px}
+.notice p{margin:0;max-width:80ch}
+
+.slow{background:var(--pri);color:#fff}
+.slow-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px}
+.slow h2{font-size:clamp(48px,7vw,92px);margin-bottom:24px}
+.slow .big{font-size:24px;line-height:1.35;font-weight:600}
+.slow p{max-width:60ch}
+.slow ul{list-style:none;padding:0;margin:28px 0 0}
+.slow li{padding:14px 0;border-top:1px solid rgba(255,255,255,.35)}
+.slow li:last-child{border-bottom:1px solid rgba(255,255,255,.35)}
+
+.how{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.how article{background:#fff;border-left:8px solid var(--c);padding:22px 26px}
+.how h3{font-size:30px;margin-bottom:10px}
+.how p{color:var(--muted);font-size:16px;margin:0}
+
+.sobre{background:var(--ink);color:#fff}
+.sobre h2{font-size:clamp(48px,7vw,92px);margin-bottom:22px}
+.sobre p{font-size:21px;line-height:1.55;max-width:44em;margin:0}
+
+.sources{padding:48px 0 56px}
+.sources h2{font-size:30px;margin-bottom:14px}
+.sources ul{padding-left:18px;color:var(--muted);font-size:14px;max-width:90ch}
+.sources a{color:var(--pri)}
+
+@media(max-width:780px){
+ section{padding:56px 0}.hero{padding:40px 0}
+ .slow-grid,.how,.place{grid-template-columns:1fr}
+ .slow-grid{gap:28px}
+ .day{grid-template-columns:1fr;gap:14px}.day>h3{position:static;font-size:40px}
+ .place{padding:22px 20px}.place h4{font-size:30px}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><div class="brand">Circuito das Praças</div><nav><a href="#percurso">O percurso</a><a href="#tempo">Tempo lento</a><a href="#experiencias">Experiências</a><a href="#sobre">Sobre nós</a></nav></div></header>
+<main>
+<div class="wrap hero">
+ <h1>Uma cidade que se conhece sem pressa.</h1>
+ <div class="hero-text">
+  <p class="lead">Um percurso por feiras e praças de Belo Horizonte, onde a cidade acontece no encontro, no trabalho, na memória e nos pequenos gestos do cotidiano.</p>
+ </div>
+</div>
+<div class="awning" aria-hidden="true"></div>
+<div class="quote"><div class="wrap"><p>“Passeamos o dia inteiro e já me acamaradei com tudo. Estou lustroso de felicidade.”</p><cite>Mário de Andrade, <i>O Turista Aprendiz</i> (diário de 1927)</cite></div></div>
+
+<section id="percurso"><div class="wrap">
+ <div class="head"><h2>O percurso</h2><p>São cinco lugares, e as feiras acontecem em dias diferentes. Por isso o circuito está organizado por dia da semana: escolha a etapa conforme o calendário.</p></div>
+
+ <div class="day"><h3>Sexta</h3><div>
+  <article class="place c3">
+   <div><h4>Praça Comendador Negrão de Lima</h4><p class="desc">A feira reúne comidas, bebidas e artesanato. A praça também faz parte da vida cotidiana da Floresta, como espaço de encontro, descanso e lazer.</p></div>
+   <div class="info">
+    <p><b>Endereço</b>Praça Comendador Negrão de Lima, s/n, entre as ruas Dona Maria Inês e Dona Lídya Couto, Floresta</p>
+    <p><b>Horário</b>Sextas, das 18h às 22h <small>(portal turístico da PBH)</small></p>
+    <p><b>Ônibus</b>As linhas ainda precisam ser levantadas para esta localidade, conforme o projeto. Consulte os pontos próximos pelo endereço.</p>
+    <div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Praca+Comendador+Negrao+de+Lima+Belo+Horizonte">Ver no mapa</a><a class="btn" target="_blank" rel="noopener" href="https://prefeitura.pbh.gov.br/sumob/onibus/pontos-de-onibus">Consultar pontos</a></div>
+   </div>
+  </article>
+ </div></div>
+
+ <div class="day"><h3>Sábado</h3><div>
+  <article class="place c1">
+   <div><h4>Feira Tom Jobim e Antiguidades</h4><p class="desc">Entre objetos antigos, gastronomia e manifestações culturais, observe como as coisas guardam histórias e atravessam gerações.</p></div>
+   <div class="info">
+    <p><b>Endereço</b>Avenida Carandaí, 600, Funcionários</p>
+    <p><b>Horário</b>Sábados, das 8h às 18h <small>(listagem turística da PBH)</small></p>
+    <p><b>Linhas citadas no projeto</b><span class="tag">2036</span><span class="tag">4031</span><span class="tag">5035</span><span class="tag">5506A</span><span class="tag">6030</span><span class="tag">62</span><span class="tag">901</span></p>
+    <p class="note">Referências preliminares do projeto; confirme o ponto e o sentido da linha antes da viagem.</p>
+    <div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Feira+Tom+Jobim+Avenida+Carandai+600+Belo+Horizonte">Ver no mapa</a><a class="btn" target="_blank" rel="noopener" href="https://prefeitura.pbh.gov.br/sumob/onibus/horarios-e-itinerarios">Consultar ônibus</a></div>
+   </div>
+  </article>
+  <article class="place c2">
+   <div><h4>Feira da Avenida Silva Lobo</h4><p class="desc">Conheça o artesanato, as plantas, as flores e as artes plásticas. Se os expositores quiserem, descubra técnicas e etapas da produção manual.</p></div>
+   <div class="info">
+    <p><b>Endereço</b>Avenida Silva Lobo, entre as ruas Canaã e Xapuri, Nova Granada</p>
+    <p><b>Horário</b>Sábados, das 10h às 16h <small>(portal turístico da PBH)</small></p>
+    <p><b>Linhas próximas listadas pela BHTRANS</b><span class="tag">8205</span><span class="tag">9201</span><span class="tag">S21</span><span class="tag">2101</span><span class="tag">2150</span></p>
+    <p class="note">A consulta de pontos também indica outras linhas em trechos da avenida. Confira a parada mais próxima do trecho da feira.</p>
+    <div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Feira+Avenida+Silva+Lobo+Belo+Horizonte">Ver no mapa</a><a class="btn" target="_blank" rel="noopener" href="https://servicosbhtrans.pbh.gov.br/bhtrans/e-servicos/S03F02-pontoonibus.asp?logradouro=Silva+Lobo&tipo=Ave">Pontos e linhas</a></div>
+   </div>
+  </article>
+ </div></div>
+
+ <div class="day"><h3>Domingo</h3><div>
+  <article class="place c4">
+   <div><h4>Praça Duque de Caxias</h4><p class="desc">Entre artesanato, gastronomia e histórias dos expositores, reserve um tempo para perceber a praça, o coreto e o entorno cultural de Santa Tereza.</p></div>
+   <div class="info">
+    <p><b>Endereço</b>Praça Duque de Caxias, s/n, Santa Tereza</p>
+    <p><b>Horário</b>Domingos, das 10h às 16h <small>(portal turístico da PBH)</small></p>
+    <p><b>Linhas citadas no projeto</b><span class="tag">9103</span><span class="tag">9210</span></p>
+    <p class="note">Referências preliminares do projeto; confirme se atendem ao ponto mais próximo e ao sentido desejado.</p>
+    <div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Praca+Duque+de+Caxias+Santa+Tereza+Belo+Horizonte">Ver no mapa</a><a class="btn" target="_blank" rel="noopener" href="https://prefeitura.pbh.gov.br/sumob/onibus/horarios-e-itinerarios">Consultar ônibus</a></div>
+   </div>
+  </article>
+  <article class="place c5">
+   <div><h4>Feira do Bairro Independência</h4><p class="desc">Saia dos trajetos mais conhecidos e observe o comércio popular, os serviços e a produção local. A experiência é também perceber como a feira atende às necessidades e aos encontros do próprio bairro.</p></div>
+   <div class="info">
+    <p><b>Endereço</b>Rua Cinco, Bairro Independência</p>
+    <p><b>Horário</b>Domingos, das 8h às 16h <small>(programação divulgada pela PBH)</small></p>
+    <p><b>Ônibus</b>As linhas mais adequadas ainda precisam ser identificadas, conforme o projeto. A linha 343 atende a região do Independência, mas confirme se serve ao trecho da feira antes de utilizá-la.</p>
+    <div class="actions"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Feira+Rua+Cinco+Bairro+Independencia+Belo+Horizonte">Ver no mapa</a><a class="btn" target="_blank" rel="noopener" href="https://prefeitura.pbh.gov.br/sumob/onibus/pontos-de-onibus">Consultar pontos</a></div>
+   </div>
+  </article>
+ </div></div>
+
+ <div class="notice"><p><b>Planeje sem engessar o passeio.</b> O circuito não precisa ser feito inteiro em um único dia. Horários podem mudar em feriados e datas especiais. As linhas de ônibus do projeto são referências preliminares, não uma garantia de atendimento porta a porta. Consulte os canais oficiais antes de sair.</p></div>
+</div></section>
+
+<section class="slow" id="tempo"><div class="wrap slow-grid">
+ <div><h2>Experimente o tempo lento.</h2><p class="big">Nem toda experiência precisa ser medida pela quantidade de lugares visitados.</p></div>
+ <div>
+  <p>A partir da reflexão de Milton Santos sobre os diferentes ritmos e temporalidades que coexistem na cidade, este circuito convida a perceber formas de vida que nem sempre aparecem nos roteiros acelerados. Nas feiras e praças, o tempo também se organiza pelo trabalho feito à mão, pela conversa, pela memória dos objetos, pela preparação da comida e pelos encontros cotidianos.</p>
+  <ul>
+   <li><b>Chegue sem pressa.</b> Caminhe pelo espaço, observe os detalhes e permita-se ficar um pouco mais em um lugar que desperte sua curiosidade.</li>
+   <li><b>Escute antes de perguntar.</b> Se houver abertura, converse com feirantes e moradores sobre a história do lugar, dos produtos e das práticas de trabalho.</li>
+   <li><b>Aprenda com o cotidiano.</b> Conheça um modo de fazer, experimente um sabor ou descubra a trajetória de um objeto, sempre respeitando a disponibilidade de quem participa.</li>
+   <li><b>Valorize a troca.</b> Consuma de produtores locais quando desejar e reconheça que oficinas, demonstrações e conversas organizadas devem ser combinadas e remuneradas.</li>
+   <li><b>Deixe espaço para o inesperado.</b> O encontro, a pausa e a observação também fazem parte da viagem.</li>
+  </ul>
+ </div>
+</div></section>
+
+<section id="experiencias"><div class="wrap">
+ <div class="head"><h2>O que você pode viver</h2><p>Possibilidades inspiradas no projeto.</p></div>
+ <div class="how">
+  <article class="c1"><h3>Memória em um objeto</h3><p>Na Tom Jobim, descubra histórias e usos de uma peça antiga conversando com o expositor, caso ele queira compartilhar sua trajetória.</p></article>
+  <article class="c2"><h3>Aprender um fazer</h3><p>Na Silva Lobo, acompanhe uma demonstração de técnica artesanal ou conheça o processo de criação de uma peça, mediante combinação prévia.</p></article>
+  <article class="c3"><h3>Sabores e histórias</h3><p>Na Comendador Negrão de Lima, experimente uma preparação e conheça ingredientes, receitas e trajetórias de quem produz.</p></article>
+  <article class="c4"><h3>Olhar a praça</h3><p>Na Duque de Caxias, observe o coreto e o entorno, conheça o artesanato e converse sobre a relação da feira com Santa Tereza.</p></article>
+  <article class="c5"><h3>Conhecer o bairro</h3><p>No Independência, percorra o comércio local e descubra como os serviços e pequenos negócios participam do cotidiano dos moradores.</p></article>
+  <article style="--c:var(--pri)"><h3>Trocar saberes</h3><p>Em qualquer etapa, participe de uma roda de conversa ou oficina apenas quando houver organização e convite dos próprios participantes.</p></article>
+ </div>
+ <div class="notice"><p>O projeto propõe que moradores, feirantes, artesãos e comerciantes sejam convidados a participar da elaboração das experiências, e não apenas recebam visitantes. A comunidade deve decidir o que deseja compartilhar, em quais condições e com que contrapartida. O diagnóstico participativo e as parcerias ainda estão em construção.</p></div>
+</div></section>
+
+<section class="sobre" id="sobre"><div class="wrap">
+ <h2>Sobre nós</h2>
+ <p>Somos <strong>Julia Michetti</strong> e <strong>Ana Carolina</strong>, alunas do 5º período do curso de Turismo da Universidade Federal de Minas Gerais (UFMG). Este site faz parte de um trabalho desenvolvido para a disciplina <em>Comunicação e Cultura</em> e apresenta a proposta do Circuito das Praças — Entre Feiras e Saberes, pensado para valorizar a memória, os saberes populares e as relações de convivência presentes nas feiras e praças de Belo Horizonte.</p>
+</div></section>
+
+<div class="wrap sources"><h2>Informações e referências</h2><ul>
+<li><a href="https://portalbelohorizonte.com.br/o-que-fazer/compras-e-moda/feiras/feira-tom-jobim-e-antiguidades" target="_blank" rel="noopener">PBH / Portal Belo Horizonte — Feira Tom Jobim e Antiguidades</a>.</li>
+<li><a href="https://portalbelohorizonte.com.br/o-que-fazer/comer-e-beber/feira/feira-da-avenida-silva-lobo" target="_blank" rel="noopener">PBH / Portal Belo Horizonte — Feira da Avenida Silva Lobo</a>; fotografia da feira: <a href="https://medium.com/%40mariaisabelmoreiraferraz/feira-da-av-silva-lobo-gera-renda-na-regi%C3%A3o-oeste-da-capital-f4ecb8ea5a9c" target="_blank" rel="noopener">reportagem no Medium</a>.</li>
+<li><a href="https://portalbelohorizonte.com.br/o-que-fazer/compras-e-moda/feiras/feira-da-praca-comendador-negrao-de-lima" target="_blank" rel="noopener">PBH / Portal Belo Horizonte — Feira da Praça Comendador Negrão de Lima</a>.</li>
+<li><a href="https://portalbelohorizonte.com.br/o-que-fazer/comer-e-beber/feira/feira-da-praca-duque-de-caxias" target="_blank" rel="noopener">PBH / Portal Belo Horizonte — Feira da Praça Duque de Caxias</a>.</li>
+<li><a href="https://prefeitura.pbh.gov.br/noticias/pbh-celebra-os-profissionais-que-movimentam-economia-na-cidade-no-dia-do-feirante" target="_blank" rel="noopener">Prefeitura de Belo Horizonte — programação das feiras municipais</a>.</li>
+<li><a href="https://servicosbhtrans.pbh.gov.br/bhtrans/e-servicos/S03F02-pontoonibus.asp?logradouro=Silva+Lobo&tipo=Ave" target="_blank" rel="noopener">BHTRANS — pontos e linhas na Avenida Silva Lobo</a>; <a href="https://prefeitura.pbh.gov.br/sumob/onibus/horarios-e-itinerarios" target="_blank" rel="noopener">horários e itinerários</a>.</li>
+<li>ANDRADE, Mário de. <i>O turista aprendiz</i>. Brasília: IPHAN, 2015.</li>
+<li>SANTOS, Milton. <i>A natureza do espaço: técnica e tempo, razão e emoção</i>. 2. ed. São Paulo: Hucitec, 1996.</li>
+<li>BRASIL. Ministério do Turismo. <i>Turismo de base comunitária: diversidade de olhares e experiências brasileiras</i>. Brasília: Ministério do Turismo, 2010.</li>
+</ul></div>
+</main>
+</body>
+</html>
